@@ -1,0 +1,21 @@
+{
+    "name": "ilexn/idorm-cache",
+    "description": "idorm db file cache",
+    "authors": [
+        {
+            "name": "iLexN",
+            "email": "ilex.job@gmail.com"
+        }
+    ],
+    "require": {
+        "j4mie/idiorm": "v1.5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ilex\\DB\\": "src"
+        }
+    }
+}
