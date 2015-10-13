@@ -8,3 +8,7 @@
     ORM::configure('check_query_cache', array($dbCache,'checkCache'));
     ORM::configure('clear_cache', array($dbCache,'clear'));
     ORM::configure('create_cache_key',array($dbCache,'genKey') );
+
+
+
+need to learn to write test
