@@ -1,6 +1,6 @@
 <?php
 
-namespace Ilex\DB;
+namespace Ilex\Cache;
 
 
 class IdiormCache
