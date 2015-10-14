@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ilex\\DB\\": "src"
+            "Ilex\\Cache\\": "src"
         }
     }
 }
