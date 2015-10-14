@@ -3,7 +3,7 @@
 
     require_once '../vendor/autoload.php';
 
-    $dbCache = new \Ilex\DB\IdiormCache(__DIR__ .'/../cache/db/', 'db-cache-');
+    $dbCache = new \Ilex\Cache\IdiormCache(__DIR__ .'/../cache/db/', 'db-cache-');
     ORM::configure('cache_query_result', array($dbCache,'write'));
     ORM::configure('check_query_cache', array($dbCache,'checkCache'));
     ORM::configure('clear_cache', array($dbCache,'clear'));
