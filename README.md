@@ -12,3 +12,5 @@
 
 
 need to learn to write test
+
+Idiorm is created by https://github.com/j4mie/idiorm
