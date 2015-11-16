@@ -125,7 +125,7 @@ class IdiormCache
      */
     public function read($cache_key, $table, $connection_name)
     {
-        return  json_decode(file_get_contents($this->getFolder($table, $connection_name) .$this->getFile($cache_key)), TURE);
+        return  json_decode(file_get_contents($this->getFolder($table, $connection_name) .$this->getFile($cache_key)), TRUE);
     }
     
     /**
