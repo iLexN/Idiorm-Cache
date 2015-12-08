@@ -2,7 +2,6 @@
 
 namespace Ilex\Cache;
 
-
 class IdiormCache
 {
     private $path = '';
@@ -125,7 +124,7 @@ class IdiormCache
      */
     public function read($cache_key, $table, $connection_name)
     {
-        return  json_decode(file_get_contents($this->getFolder($table, $connection_name) .$this->getFile($cache_key)), TRUE);
+        return  json_decode(file_get_contents($this->getFolder($table, $connection_name) .$this->getFile($cache_key)), true);
     }
     
     /**
