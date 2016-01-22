@@ -137,7 +137,13 @@ class IdiormCache
      */
     public function read($cache_key, $table, $connection_name)
     {
-        return  json_decode(file_get_contents($this->getFolder($table, $connection_name).$this->getFile($cache_key)), true);
+        return  json_decode(
+            file_get_contents(
+                $this->getFolder($table, $connection_name).
+                $this->getFile($cache_key)
+            ),
+            true
+        );
     }
 
     /**
@@ -179,6 +185,7 @@ class IdiormCache
     {
         $parameter_string = implode(',', $parameters);
         $key = $query.':'.$parameter_string.'-'.$table.'-'.$connection_name;
+
         return $this->prefix.hash('md5', $key);
     }
 }
