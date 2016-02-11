@@ -43,7 +43,11 @@ class IdiormCache implements IdiormCacheInterface
 
     public function clear($table, $connection_name)
     {
-        $this->pool->deleteItem($connection_name.'/'.$table);
+        if ($table == '') {
+            $this->pool->deleteItem($connection_name.'/'.$table.'/*');
+        } else {
+            $this->pool->deleteItem($connection_name.'/*');
+        }
     }
 
     public function genKey($query, $parameters, $table, $connection_name)
