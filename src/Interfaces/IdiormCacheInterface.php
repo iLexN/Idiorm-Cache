@@ -33,7 +33,7 @@ interface IdiormCacheInterface
      *
      * @return bool|array
      */
-    public function isMiss($cache_key, $table, $connection_name);
+    public function isHit($cache_key, $table, $connection_name);
 
     /**
      * clear the cache File

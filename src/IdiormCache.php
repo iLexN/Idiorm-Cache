@@ -31,10 +31,10 @@ class IdiormCache implements IdiormCacheInterface
         $this->pool->save($item->set($value));
     }
 
-    public function isMiss($cache_key, $table, $connection_name)
+    public function isHit($cache_key, $table, $connection_name)
     {
         $item = $this->pool->getItem($connection_name.'/'.$table.'/'.$cache_key);
-        if ($item->isMiss()) {
+        if (!$item->isHit()) {
             return false;
         }
 
