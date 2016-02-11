@@ -19,6 +19,7 @@ interface IdiormCacheInterface
      * @param array  $value           result set
      * @param string $table           db table
      * @param string $connection_name
+     * @return void
      */
     public function save($cache_key, $value, $table, $connection_name);
 
@@ -39,6 +40,7 @@ interface IdiormCacheInterface
      *
      * @param string $table
      * @param string $connection_name
+     * @return void
      */
     public function clear($table, $connection_name);
 
