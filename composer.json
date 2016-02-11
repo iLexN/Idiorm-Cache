@@ -7,8 +7,10 @@
             "email": "ilex.job@gmail.com"
         }
     ],
+    "license": "MIT",
     "require": {
-        "j4mie/idiorm": "v1.5.1"
+        "j4mie/idiorm": "v1.5.1",
+        "tedivm/stash": "0.14.*"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8.0"
