@@ -44,9 +44,9 @@ class IdiormCache implements IdiormCacheInterface
     public function clear($table, $connection_name)
     {
         if ($table == '') {
-            $this->pool->deleteItem($connection_name.'/'.$table.'/*');
-        } else {
             $this->pool->deleteItem($connection_name.'/*');
+        } else {
+            $this->pool->deleteItem($connection_name.'/'.$table.'/*');
         }
     }
 
