@@ -4,43 +4,43 @@ namespace Ilex\Test;
 
 class Test1 extends \PHPUnit_Framework_TestCase
 {
+    private $path = 'cache_folder';
+
     /**
-     * @dataProvider additionProvider
+     * @expectedException Exception
      */
-    public function testCheckHKIDFormat($p1, $p2, $p3)
+    public function testException()
     {
-        $a = \Ilex\Validation\HkidCheckDigit::checkHKIDFormat($p1, $p2, $p3);
-        $this->assertTrue($a);
+        $path = 'a/b';
+        $cache = new \Ilex\Cache\IdiormCache($path);
     }
 
-    public function additionProvider()
+    public function testCacheFolder()
     {
-        return [
-            'B111111(1)'  => ['B', '111111', '1'],
-            'CA182361(1)' => ['CA', '182361', '1'],
-            //'ZA182361(3)' => array('ZA', '182361', '3'),
-            'B111112(A)' => ['B', '111112', 'A'],
-            'B111117(0)' => ['B', '111117', '0'],
-        ];
+        mkdir($this->path, '0777');
+        $cache = new \Ilex\Cache\IdiormCache($this->path);
     }
 
-    public function testCheckHKIDFormatFalse()
+    public function testSave()
     {
-        $p1 = 'B';
-        $p2 = '111111';
-        $p3 = '3';
+        $cache = new \Ilex\Cache\IdiormCache($this->path);
 
-        $a = \Ilex\Validation\HkidCheckDigit::checkHKIDFormat($p1, $p2, $p3);
-        $this->assertFalse($a);
+        $this->assertFalse($cache->isMiss('key', 'table', 'default'));
+
+        $cache->save('key', 'test value', 'table', 'default');
+
+        $this->assertEquals('test value', $cache->isMiss('key', 'table', 'default'));
     }
 
-    public function testCheckHKIDFormatFalse2()
+    public function testClear()
     {
-        $p1 = 'BSA';
-        $p2 = '111111';
-        $p3 = '3';
+        $cache = new \Ilex\Cache\IdiormCache($this->path);
+        $cache->clear('table', 'default');
+    }
 
-        $a = \Ilex\Validation\HkidCheckDigit::checkHKIDFormat($p1, $p2, $p3);
-        $this->assertFalse($a);
+    public function testGenKey()
+    {
+        $cache = new \Ilex\Cache\IdiormCache($this->path);
+        $this->assertEquals('952c7c3c67becfe353618a2298984d3a', $cache->genKey('adfasf', array('sdf','sdfdsf'), 'table', 'default'));
     }
 }
