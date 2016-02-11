@@ -1,5 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/iLexN/Idiorm-Cache/badge.svg?branch=master)](https://coveralls.io/github/iLexN/Idiorm-Cache?branch=master)
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/iLexN/Idiorm-Cache/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/iLexN/Idiorm-Cache/?branch=master)
+[![Build Status](https://travis-ci.org/iLexN/Idiorm-Cache.svg?branch=master)](https://travis-ci.org/iLexN/Idiorm-Cache)
 
 # How to autoload
 
