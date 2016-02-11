@@ -4,7 +4,7 @@ namespace Ilex\Test;
 
 class Test1 extends \PHPUnit_Framework_TestCase
 {
-    private $path = 'cache_folder';
+    private $path = 'tests/cache_folder';
 
     /**
      * @expectedException Exception
