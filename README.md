@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/iLexN/Idiorm-Cache/badge.svg?branch=master)](https://coveralls.io/github/iLexN/Idiorm-Cache?branch=master)
+
+
 # How to autoload
 
 
