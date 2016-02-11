@@ -41,6 +41,6 @@ class Test1 extends \PHPUnit_Framework_TestCase
     public function testGenKey()
     {
         $cache = new \Ilex\Cache\IdiormCache($this->path);
-        $this->assertEquals('952c7c3c67becfe353618a2298984d3a', $cache->genKey('adfasf', array('sdf','sdfdsf'), 'table', 'default'));
+        $this->assertEquals('952c7c3c67becfe353618a2298984d3a', $cache->genKey('adfasf', ['sdf', 'sdfdsf'], 'table', 'default'));
     }
 }
