@@ -17,7 +17,7 @@ class Test1 extends \PHPUnit_Framework_TestCase
 
     public function testCacheFolder()
     {
-        mkdir($this->path, '0777');
+        mkdir($this->path, 0777);
         $cache = new \Ilex\Cache\IdiormCache($this->path);
     }
 
