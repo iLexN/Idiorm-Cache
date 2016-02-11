@@ -19,7 +19,7 @@ class IdiormCache implements IdiormCacheInterface
         if (!is_writable($path)) {
             throw new \Exception(sprintf('%s is not exist or writable', $path));
         }
-        $options = array('path' => $path);
+        $options = ['path' => $path];
         $driver = new \Stash\Driver\FileSystem($options);
         $this->pool = new \Stash\Pool($driver);
     }
