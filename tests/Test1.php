@@ -36,6 +36,7 @@ class Test1 extends \PHPUnit_Framework_TestCase
     {
         $cache = new \Ilex\Cache\IdiormCache($this->path);
         $cache->clear('table', 'default');
+        $cache->clear('', 'default');
     }
 
     public function testGenKey()
