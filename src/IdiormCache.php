@@ -10,7 +10,8 @@ class IdiormCache implements IdiormCacheInterface
     private $pool;
 
     /**
-     * expires after in sec, default 1hour = 3600s
+     * expires after in sec, default 1hour = 3600s.
+     *
      * @var int
      */
     private $expiresAfter;
@@ -20,7 +21,7 @@ class IdiormCache implements IdiormCacheInterface
      *
      * @throws \Exception
      */
-    public function __construct($path,$expiresAfter=3600)
+    public function __construct($path, $expiresAfter = 3600)
     {
         if (!is_writable($path)) {
             throw new \Exception(sprintf('%s is not exist or writable', $path));
