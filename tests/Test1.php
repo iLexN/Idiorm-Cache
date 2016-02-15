@@ -32,6 +32,15 @@ class Test1 extends \PHPUnit_Framework_TestCase
         $this->assertEquals('test value', $cache->isHit('key', 'table', 'default'));
     }
 
+    public function testSaveExpire()
+    {
+        $cache = new \Ilex\Cache\IdiormCache($this->path,1);
+
+        $cache->save('key2', 'test value2', 'table2', 'default');
+        sleep(1);
+        $this->assertFalse($cache->isHit('key2', 'table2', 'default'));
+    }
+
     public function testClear()
     {
         $cache = new \Ilex\Cache\IdiormCache($this->path);
