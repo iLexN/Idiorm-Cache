@@ -34,7 +34,7 @@ class Test1 extends \PHPUnit_Framework_TestCase
 
     public function testSaveExpire()
     {
-        $cache = new \Ilex\Cache\IdiormCache($this->path,1);
+        $cache = new \Ilex\Cache\IdiormCache($this->path, 1);
 
         $cache->save('key2', 'test value2', 'table2', 'default');
         sleep(1);
