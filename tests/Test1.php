@@ -6,15 +6,6 @@ class Test1 extends \PHPUnit_Framework_TestCase
 {
     private $path = 'vendor/cache_folder';
 
-    /**
-     * @expectedException Exception
-     */
-    public function testException()
-    {
-        $path = 'a/b';
-        $cache = new \Ilex\Cache\IdiormCache($path);
-    }
-
     public function testCacheFolder()
     {
         mkdir($this->path, 0777);
